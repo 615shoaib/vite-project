@@ -1,9 +1,11 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { useEffect } from "react"
 import { AppProvider } from "../Context Api/Api"
 import axios from "axios"
 import TableData from "./TableData"
 import Loading from "./loading"
+import { Button } from "@mui/material"
+
 
 
 
@@ -15,7 +17,7 @@ const Table = () => {
         const res = axios.get(API).then((res) => {
             setLoading(false)
             try {
-                // console.log(res.data)
+                console.log(res.data)
                 setData(res.data)
             } catch (error) {
                 console.log("error msg", error)
@@ -23,18 +25,16 @@ const Table = () => {
 
         })
     }
-    if(loading){
+    if (loading) {
         return <Loading />
     }
     useEffect(() => {
         getUser()
+       
     }, [])
     return (
         <>
-        <TableData /> 
-        
-       
-           
+            <TableData />
         </>
     )
 
