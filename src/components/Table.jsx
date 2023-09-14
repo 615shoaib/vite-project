@@ -14,7 +14,7 @@ const Table = () => {
     const { data, setData, search, setSearch, loading, setLoading,setShow } = useContext(AppProvider)
     const API = "https://fakestoreapi.com/products"
     const getUser = () => {
-          setLoading(false)
+        
         const res = axios.get(API).then((res) => {
             try {
                 console.log(res.data)
@@ -26,16 +26,24 @@ const Table = () => {
 
         })
     }
-    if (loading) {
-        return <Loading />
-    }
+    // if (loading) {
+    //     return <Loading />
+    // }
     useEffect(() => {
         getUser()
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000);
        
     }, [])
     return (
-        <>
-            <TableData />
+        <>{
+            loading  ? (
+                <Loading />
+            ) :
+               <TableData />
+        }
+         
         </>
     )
 

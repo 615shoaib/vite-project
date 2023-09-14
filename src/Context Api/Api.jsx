@@ -9,7 +9,7 @@ const Api=({children})=>{
     const [data,setData]=useState([])
     const [show,setShow]=useState([])
     const [search,setSearch]=useState("")
-    const [loading,setLoading]=useState(false)
+    const [loading,setLoading]=useState(true)
     const [sorting,setSorting]=useState("")
 
     return(
