@@ -7,6 +7,7 @@ export const AppProvider = createContext(null);
 
 const Api=({children})=>{
     const [data,setData]=useState([])
+    const [show,setShow]=useState([])
     const [search,setSearch]=useState("")
     const [loading,setLoading]=useState(false)
     const [sorting,setSorting]=useState("")
@@ -21,7 +22,9 @@ const Api=({children})=>{
         loading,
         setLoading,
         sorting,
-        setSorting
+        setSorting,
+        show,
+        setShow
     }}>
         {children}
     </AppProvider.Provider>

@@ -1,4 +1,4 @@
-import { TableCell,TableContainer, TableHead, TableRow, Paper, InputLabel, TableBody, TextField, Box, Table, FormControl, Select, MenuItem, Button } from "@mui/material"
+import { TableCell, TableContainer, TableHead, TableRow, Paper, InputLabel, TableBody, TextField, Box, Table, FormControl, Select, MenuItem, Button } from "@mui/material"
 import { useContext, useState } from "react"
 import { AppProvider } from "../Context Api/Api"
 import Option from "./option"
@@ -24,7 +24,7 @@ const TableData = () => {
                             !search ? null : <Button>Back to Home </Button>
                         }
                     </Box>
-                   
+
                 </Box>
             </Paper>
             <br />
@@ -43,14 +43,14 @@ const TableData = () => {
                     </TableHead>
                     <TableBody>
                         {
-                            data.filter((val)=>{
-                                if(search === ""){
-                                    return val 
-                                }else if(val.title.toLowerCase().includes(search.toLowerCase())){
+                            data.filter((val) => {
+                                if (search === "") {
+                                    return val
+                                } else if (val.title.toLowerCase().includes(search.toLowerCase())) {
                                     return val
                                 }
                             })
-                            .map((val) => {
+                                .map((val) => {
                                     return (
                                         <>
                                             <TableRow>
